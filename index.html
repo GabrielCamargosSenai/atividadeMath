@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Métodos Math</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #050505;
+            color: #d4d4d4;
+            line-height: 1.7;
+            padding: 40px 16px;
+        }
+
+        .principal {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .conteudo {
+            background-color: #111111;
+            border: 1px solid #262626;
+            border-top: 4px solid #a78bfa;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .titulo {
+            color: #a78bfa;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .sub {
+            color: #8b5cf6;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #262626;
+            padding-bottom: 6px;
+            margin: 24px 0 12px;
+        }
+
+        h4 {
+            color: #c4b5fd;
+            margin: 18px 0 8px;
+        }
+
+        .txt {
+            overflow-wrap: anywhere;
+        }
+
+        /* blocos de exemplo: parágrafos que vêm logo depois de um h4 */
+        h4+.txt {
+            background-color: #080808;
+            border-left: 4px solid #8b5cf6;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.95rem;
+        }
+
+        .aspas {
+            background-color: #262626;
+            color: #ddd6fe;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        /* remove as aspas automáticas da tag <q> */
+        .aspas::before,
+        .aspas::after {
+            content: none;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .conteudo {
+                padding: 20px;
+            }
+
+            .titulo {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="principal">
+        <article>
+            <section>
+                <div class="conteudo">
+                    <h1 class="titulo">Math.random</h1>
+                    <h3 class="sub">Conceito:</h3>
+                    <p class="txt">
+                        A função <q class="aspas">Math.random()</q>, retorna um número aleatório, em um intervalo de <q
+                            class="aspas">[0, 1].</q> Porém, o valor nunca chegará a ser 1, o valor pode chegar a
+                        0.999999... , mas nunca irá chegar a 1. O intervalo pode ser alterado para sortear um número,
+                        como exemplo, valores de 1 a 6.
+                    </p>
+                    <h3 class="sub">Exemplos:</h3>
+                    <h4>Intervalo Padrão:</h4>
+                    <p class="txt">
+                        Math.random(); //Return: 0.27
+                        <br>
+                        Math.random(); //Return: 0.999
+                    </p>
+
+                    <h4>Intervalo Definido:</h4>
+                    <p class="txt">
+                        const dado = Math.floor(Math.random() * 6) + 1; //Return: 5
+                        <br>
+                        <br>
+                        A aleatolarização do número será da seguinte maneira: o <q class="aspas">Math.random();</q>,
+                        entregará um número no intervalo de 0 a 1, o valor será multiplicado por 6 e acrescentado mais,
+                        pois, sem o + 1, o valor iria até 5, não até 6 com esperado. Ex: 0.75 x 6 = 4.5, o <q
+                            class="aspas">Math.floor</q>, tira a vírgula, deixando 4, somando com 1, resulta em 5
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <article>
+            <section>
+                <div class="conteudo">
+                    <h1 class="titulo">Math.floor</h1>
+                    <h3 class="sub">Conceito:</h3>
+                    <p class="txt">
+                        A função <q class="aspas">Math.floor();</q>, transforma um número decimal em inteiro,
+                        arredondando-o para baixo
+                    </p>
+                    <h3 class="sub">Exemplos:</h3>
+                    <h4>Positivos:</h4>
+                    <p class="txt">
+                        Math.floor(4.2); // 4 <br>
+                        Math.floor(4.9); // 4 (mesmo perto de 5, desce) <br>
+                        Math.floor(7); // 7 (já é inteiro, não muda) <br>
+                        Math.floor(0.75); // 0 <br>
+                    </p>
+
+                    <h4>Negativos:</h4>
+                    <p class="txt">
+                        Math.floor(-4.2); // -5 <br>
+                        Math.floor(-2.2); // -3 <br>
+                        Math.floor(-7.2); // -8 <br>
+                        Math.floor(-0.2); // -1 <br>
+                    </p>
+
+                </div>
+            </section>
+        </article>
+    </main>
+
+
+    <script>
+        // Math.random()
+        console.log("Exemplo 'Math.random' com intervalo de 0 a 1");
+        console.log(Math.random());
+
+        console.log("Exemplo 'Math.random' com intervalo de 1 a 6");
+        console.log(Math.floor(Math.random() * 6) + 1);
+
+        // Math.floor()
+        console.log("Exemplo 'Math.floor' com valores positivos");
+        console.log(Math.floor(14.1322));
+
+        console.log("Exemplo 'Math.floor' com valores negativos");
+        console.log(Math.floor(-83.2038));
+
+    </script>
+
+</body>
+
+</html>
